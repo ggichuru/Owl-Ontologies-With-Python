@@ -1,0 +1,384 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://lesfleursdunormal.fr/static/_downloads/bacteria.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://lesfleursdunormal.fr/static/_downloads/bacteria.owl">
+    <Prefix name="" IRI="http://lesfleursdunormal.fr/static/_downloads/bacteria.owl#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Bacillus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Bacterium"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Coccus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Grouping"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InChain"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InCluster"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InLongChain"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InPair"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InSmallChain"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Isolated"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pseudomonas"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Rod"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Round"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Shape"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Staphylococcus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Streptococcus"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_grouping"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_shape"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#is_grouping_of"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#is_shape_of"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#gram_positive"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#nb_colonies"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#in_cluster1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#round1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#unknown_bacterium"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Bacillus"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Bacterium"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#has_shape"/>
+                <Class IRI="#Rod"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#has_shape"/>
+                <Class IRI="#Rod"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Coccus"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Bacterium"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#has_shape"/>
+                <Class IRI="#Round"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#has_shape"/>
+                <Class IRI="#Round"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Staphylococcus"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Bacterium"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#has_grouping"/>
+                <Class IRI="#InCluster"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#has_shape"/>
+                <Class IRI="#Round"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#has_shape"/>
+                <Class IRI="#Round"/>
+            </ObjectAllValuesFrom>
+            <DataHasValue>
+                <DataProperty IRI="#gram_positive"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Streptococcus"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Bacterium"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#has_grouping"/>
+                <Class IRI="#InSmallChain"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#has_shape"/>
+                <Class IRI="#Round"/>
+            </ObjectSomeValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#has_grouping"/>
+                <ObjectComplementOf>
+                    <Class IRI="#Isolated"/>
+                </ObjectComplementOf>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#has_shape"/>
+                <Class IRI="#Round"/>
+            </ObjectAllValuesFrom>
+            <DataHasValue>
+                <DataProperty IRI="#gram_positive"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Bacillus"/>
+        <Class IRI="#Bacterium"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Bacterium"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Coccus"/>
+        <Class IRI="#Bacterium"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Grouping"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InChain"/>
+        <Class IRI="#Grouping"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InCluster"/>
+        <Class IRI="#Grouping"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InLongChain"/>
+        <Class IRI="#InChain"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InPair"/>
+        <Class IRI="#Grouping"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InSmallChain"/>
+        <Class IRI="#InChain"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Isolated"/>
+        <Class IRI="#Grouping"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pseudomonas"/>
+        <Class IRI="#Bacterium"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pseudomonas"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#has_grouping"/>
+            <ObjectUnionOf>
+                <Class IRI="#InPair"/>
+                <Class IRI="#Isolated"/>
+            </ObjectUnionOf>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pseudomonas"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#has_shape"/>
+            <Class IRI="#Rod"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pseudomonas"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#has_shape"/>
+            <Class IRI="#Rod"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pseudomonas"/>
+        <DataHasValue>
+            <DataProperty IRI="#gram_positive"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+        </DataHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Rod"/>
+        <Class IRI="#Shape"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Round"/>
+        <Class IRI="#Shape"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Shape"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Staphylococcus"/>
+        <Class IRI="#Coccus"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Streptococcus"/>
+        <Class IRI="#Coccus"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Bacterium"/>
+        <Class IRI="#Grouping"/>
+        <Class IRI="#Shape"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#InChain"/>
+        <Class IRI="#InCluster"/>
+        <Class IRI="#InPair"/>
+        <Class IRI="#Isolated"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#InLongChain"/>
+        <Class IRI="#InSmallChain"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Rod"/>
+        <Class IRI="#Round"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#InCluster"/>
+        <NamedIndividual IRI="#in_cluster1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Round"/>
+        <NamedIndividual IRI="#round1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Bacterium"/>
+        <NamedIndividual IRI="#unknown_bacterium"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_grouping"/>
+        <NamedIndividual IRI="#unknown_bacterium"/>
+        <NamedIndividual IRI="#in_cluster1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_shape"/>
+        <NamedIndividual IRI="#unknown_bacterium"/>
+        <NamedIndividual IRI="#round1"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#gram_positive"/>
+        <NamedIndividual IRI="#unknown_bacterium"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#nb_colonies"/>
+        <NamedIndividual IRI="#unknown_bacterium"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">6</Literal>
+    </DataPropertyAssertion>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#has_grouping"/>
+        <ObjectProperty IRI="#is_grouping_of"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#has_shape"/>
+        <ObjectProperty IRI="#is_shape_of"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#has_shape"/>
+    </FunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_grouping"/>
+        <Class IRI="#Bacterium"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_shape"/>
+        <Class IRI="#Bacterium"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#is_grouping_of"/>
+        <Class IRI="#Grouping"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#is_shape_of"/>
+        <Class IRI="#Shape"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_grouping"/>
+        <Class IRI="#Grouping"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_shape"/>
+        <Class IRI="#Shape"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#is_grouping_of"/>
+        <Class IRI="#Bacterium"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#is_shape_of"/>
+        <Class IRI="#Bacterium"/>
+    </ObjectPropertyRange>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#gram_positive"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#nb_colonies"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="#gram_positive"/>
+        <Class IRI="#Bacterium"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#nb_colonies"/>
+        <Class IRI="#Bacterium"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#gram_positive"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#nb_colonies"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
