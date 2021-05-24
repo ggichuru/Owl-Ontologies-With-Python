@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://lesfleursdunormal.fr/static/_downloads/bacteria_individuals.owl"
+         xmlns="http://lesfleursdunormal.fr/static/_downloads/bacteria_individuals.owl#"
+         xmlns:bact="http://lesfleursdunormal.fr/static/_downloads/bacteria.owl#">
+
+<owl:Ontology rdf:about="http://lesfleursdunormal.fr/static/_downloads/bacteria_individuals.owl">
+  <owl:imports rdf:resource="http://lesfleursdunormal.fr/static/_downloads/bacteria.owl"/>
+</owl:Ontology>
+
+<bact:Bacterium rdf:about="#bact1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <bact:has_grouping rdf:resource="#incluster1"/>
+  <bact:has_shape rdf:resource="#round1"/>
+  <bact:gram_positive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</bact:gram_positive>
+  <bact:nb_colonies rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</bact:nb_colonies>
+</bact:Bacterium>
+
+<bact:Round rdf:about="#round1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</bact:Round>
+
+<bact:InCluster rdf:about="#incluster1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</bact:InCluster>
+
+<bact:Bacterium rdf:about="#bact2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <bact:has_grouping rdf:resource="#inchain1"/>
+  <bact:has_shape rdf:resource="#rod1"/>
+  <bact:gram_positive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</bact:gram_positive>
+  <bact:nb_colonies rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</bact:nb_colonies>
+</bact:Bacterium>
+
+<bact:Rod rdf:about="#rod1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</bact:Rod>
+
+<bact:InChain rdf:about="#inchain1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</bact:InChain>
+
+<bact:Bacterium rdf:about="#bact3">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <bact:has_grouping rdf:resource="#isolated1"/>
+  <bact:has_shape rdf:resource="#rod2"/>
+  <bact:gram_positive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</bact:gram_positive>
+  <bact:nb_colonies rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</bact:nb_colonies>
+</bact:Bacterium>
+
+<bact:Rod rdf:about="#rod2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</bact:Rod>
+
+<bact:Isolated rdf:about="#isolated1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</bact:Isolated>
+
+<bact:Bacterium rdf:about="#bact4">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <bact:has_grouping rdf:resource="#inpair1"/>
+</bact:Bacterium>
+
+<bact:InPair rdf:about="#inpair1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</bact:InPair>
+
+
+</rdf:RDF>

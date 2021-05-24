@@ -1,0 +1,5 @@
+ID,gram_positive,shape,grouping,nb_colonies
+bact1,TRUE,Round,InCluster,2
+bact2,FALSE,Rod,InChain,5
+bact3,TRUE,Rod,Isolated,4
+bact4,,,InPair,
