@@ -4,7 +4,7 @@ from flask import Flask, request
 onto = get_ontology("bacteriaOnto.owl").load()
 app = Flask(__name__)
 
-app.route('/')
+@app.route('/')
 def entry_page():
     html = """<html><body>
 <h3>Enter the bacteria characteristics: </h3>
