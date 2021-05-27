@@ -65,7 +65,7 @@ def page_result():
     
     class_names = []
     for bacterium_class in bacterium.is_a:
-        if isinstance(bacterium_class, ThingClass):
+        if isinstance(bacterium_class, T):
             class_names.append(bacterium_class.name)
     class_names = ",".join(class_names)
 

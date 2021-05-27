@@ -1,0 +1,206 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/ggichuru/ontologies/2021/4/blight_onto_01"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/ggichuru/ontologies/2021/4/blight_onto_01">
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#BlightConditions"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BlightHumd"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BlightPeriod"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BlightTemp"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Diseased"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Healthy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Humidity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Temperature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Weather"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasBlightHumd"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasBlightTemp"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isBlightFree"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#notBlightHumd"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#notBlightTemp"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isBlightHumd"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isBlightTemp"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#BlightHumd"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#BlightConditions"/>
+            <DataHasValue>
+                <DataProperty IRI="#isBlightHumd"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#BlightTemp"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#BlightConditions"/>
+            <DataHasValue>
+                <DataProperty IRI="#isBlightTemp"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Diseased"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#BlightPeriod"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasBlightHumd"/>
+                <Class IRI="#BlightHumd"/>
+            </ObjectAllValuesFrom>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasBlightTemp"/>
+                <Class IRI="#BlightTemp"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#BlightHumd"/>
+        <Class IRI="#BlightConditions"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BlightTemp"/>
+        <Class IRI="#BlightConditions"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Diseased"/>
+        <Class IRI="#BlightPeriod"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Healthy"/>
+        <Class IRI="#BlightPeriod"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Humidity"/>
+        <Class IRI="#Weather"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Temperature"/>
+        <Class IRI="#Weather"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#BlightConditions"/>
+        <Class IRI="#BlightPeriod"/>
+        <Class IRI="#Weather"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#BlightHumd"/>
+        <Class IRI="#BlightTemp"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Diseased"/>
+        <Class IRI="#Healthy"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Humidity"/>
+        <Class IRI="#Temperature"/>
+    </DisjointClasses>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasBlightHumd"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasBlightTemp"/>
+    </FunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasBlightHumd"/>
+        <Class IRI="#BlightPeriod"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasBlightTemp"/>
+        <Class IRI="#BlightPeriod"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isBlightFree"/>
+        <Class IRI="#BlightPeriod"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#notBlightHumd"/>
+        <Class IRI="#BlightPeriod"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#notBlightTemp"/>
+        <Class IRI="#BlightPeriod"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasBlightHumd"/>
+        <Class IRI="#BlightHumd"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasBlightTemp"/>
+        <Class IRI="#BlightTemp"/>
+    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#isBlightHumd"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#isBlightTemp"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#isBlightHumd"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#isBlightTemp"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="#isBlightHumd"/>
+        <Class IRI="#BlightHumd"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#isBlightTemp"/>
+        <Class IRI="#BlightTemp"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#isBlightHumd"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#isBlightTemp"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
