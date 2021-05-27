@@ -31,7 +31,7 @@ print(onto.Coccus.is_a)
 
 # change the name of property
 onto.has_grouping.python_name = "groupings"
-print(onto.unknown_bacterium.groupings, '\n')
+print("ejjeje",onto.unknown_bacterium.groupings, '\n')
 
 # Searching for entities            #NB:/ is case sensitive by default
 print(onto.search(iri = "*Coccus*"))                    #search all entities whose iri contains Coccus 

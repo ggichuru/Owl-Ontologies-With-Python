@@ -81,4 +81,4 @@ def individual_page(iri):
 
 
 import werkzeug.serving
-werkzeug.serving.run_simple('localhost', 5000, app)
+werkzeug.serving.run_simple('localhost', 5050, app)
