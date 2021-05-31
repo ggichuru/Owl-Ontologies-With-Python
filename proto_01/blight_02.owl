@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/ggichuru/ontologies/2021/4/blight_02"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/ggichuru/ontologies/2021/4/blight_02">
+    <Prefix name="" IRI="http://www.semanticweb.org/ggichuru/ontologies/2021/4/untitled-ontology-36#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Asante"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BlightPeriod"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Chaguo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cultivar"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Diseased"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Faulu"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Good"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Healthy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Karibu"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mavuno"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Poor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Resistance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sifa"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tigoni"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCultivar"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasResistance"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#blightPositive"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Diseased"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#BlightPeriod"/>
+            <DataHasValue>
+                <DataProperty IRI="#blightPositive"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Good"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Resistance"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasCultivar"/>
+                <ObjectUnionOf>
+                    <Class IRI="#Asante"/>
+                    <Class IRI="#Chaguo"/>
+                    <Class IRI="#Faulu"/>
+                    <Class IRI="#Karibu"/>
+                    <Class IRI="#Mavuno"/>
+                    <Class IRI="#Sifa"/>
+                </ObjectUnionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Healthy"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#BlightPeriod"/>
+            <DataHasValue>
+                <DataProperty IRI="#blightPositive"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Poor"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Resistance"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasCultivar"/>
+                <Class IRI="#Tigoni"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Asante"/>
+        <Class IRI="#Cultivar"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Chaguo"/>
+        <Class IRI="#Cultivar"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Diseased"/>
+        <Class IRI="#BlightPeriod"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Faulu"/>
+        <Class IRI="#Cultivar"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Good"/>
+        <Class IRI="#Resistance"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Healthy"/>
+        <Class IRI="#BlightPeriod"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Karibu"/>
+        <Class IRI="#Cultivar"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mavuno"/>
+        <Class IRI="#Cultivar"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Poor"/>
+        <Class IRI="#Resistance"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sifa"/>
+        <Class IRI="#Cultivar"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tigoni"/>
+        <Class IRI="#Cultivar"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Asante"/>
+        <Class IRI="#Chaguo"/>
+        <Class IRI="#Faulu"/>
+        <Class IRI="#Karibu"/>
+        <Class IRI="#Mavuno"/>
+        <Class IRI="#Sifa"/>
+        <Class IRI="#Tigoni"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#BlightPeriod"/>
+        <Class IRI="#Cultivar"/>
+        <Class IRI="#Resistance"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Diseased"/>
+        <Class IRI="#Healthy"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Good"/>
+        <Class IRI="#Poor"/>
+    </DisjointClasses>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasCultivar"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasResistance"/>
+    </FunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCultivar"/>
+        <Class IRI="#Resistance"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasResistance"/>
+        <Class IRI="#Cultivar"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCultivar"/>
+        <Class IRI="#Cultivar"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasResistance"/>
+        <Class IRI="#Resistance"/>
+    </ObjectPropertyRange>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#blightPositive"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="#blightPositive"/>
+        <Class IRI="#BlightPeriod"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#blightPositive"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
