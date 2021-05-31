@@ -1,7 +1,7 @@
 import werkzeug.serving
 from flask import Flask, request
 from owlready2 import *
-onto = get_ontology("BlightTestOnto/blight_02.owl").load()
+onto = get_ontology("blight_02.owl").load()
 
 for c in onto.Resistance.subclasses():
     print(c.name)
@@ -115,7 +115,6 @@ def diseased_result():
         sync_reasoner([onto, onto_tmp1])
 
         class_names = []
-        
         for resistance_class in resistance.is_a:
             if isinstance(resistance_class, ThingClass):
                 class_names.append(resistance_class.name)
