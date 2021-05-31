@@ -1,0 +1,71 @@
+from owlready2 import *
+onto = get_ontology("BlightTestOnto/blight_02.owl").load()
+
+# for c in onto.BlightPeriod.subclasses():
+#     print(c.name)
+
+
+from flask import Flask, request
+app = Flask(__name__)
+
+@app.route('/')
+def entry_page():
+    html = """<html><body>
+    <h1>Select conditions</h1>
+<form action = "/result">
+    Blight Period: <br/>
+            <input type="radio" name="temp" value="True"/> True<br/>
+            <input type="radio" name="temp" value="False"/> False<br/>
+    <br/> <br/>
+    <input type="submit"/>
+</form>
+</body></html>
+    """
+
+    return html
+
+ONTO_ID = 0
+
+@app.route('/result')
+def page_result():
+    global ONTO_ID
+    ONTO_ID = ONTO_ID + 1
+
+    onto_tmp = get_ontology("http://tmp.org/onto_%s.owl#" % ONTO_ID)
+
+    temp = request.args.get("temp","")
+
+    with onto_tmp:
+        blightPeriod = onto.BlightPeriod()
+        
+    
+        if temp == "True": blightPeriod.blightPositive = True
+        elif temp == "False": blightPeriod.blightPositive = False
+
+
+        
+
+
+        close_world(blightPeriod)
+
+        sync_reasoner([onto, onto_tmp])
+
+        class_names = []
+        for blight_class in blightPeriod.is_a:
+            if isinstance(blight_class, ThingClass):
+                class_names.append(blight_class.name)
+        class_names = ",".join(class_names)
+
+        html = """
+        <html><body>
+        <h3> Result: %s </h3>
+    </body></html> 
+        """ % class_names
+
+        onto_tmp.destroy()
+
+        return html
+
+
+import werkzeug.serving
+werkzeug.serving.run_simple("localhost", 4040, app)
