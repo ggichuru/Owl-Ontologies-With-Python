@@ -13,13 +13,52 @@
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Declaration>
+        <Class IRI="#Asante"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#BlightPeriod"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Chaguo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cultivar"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Diseased"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Faulu"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Good"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Healthy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Karibu"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mavuno"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Poor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Resistance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sifa"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tigoni"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCultivar"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasResistance"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#blightPositive"/>
@@ -35,6 +74,23 @@
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
+        <Class IRI="#Good"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Resistance"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasCultivar"/>
+                <ObjectUnionOf>
+                    <Class IRI="#Asante"/>
+                    <Class IRI="#Chaguo"/>
+                    <Class IRI="#Faulu"/>
+                    <Class IRI="#Karibu"/>
+                    <Class IRI="#Mavuno"/>
+                    <Class IRI="#Sifa"/>
+                </ObjectUnionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
         <Class IRI="#Healthy"/>
         <ObjectIntersectionOf>
             <Class IRI="#BlightPeriod"/>
@@ -44,18 +100,104 @@
             </DataHasValue>
         </ObjectIntersectionOf>
     </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Poor"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Resistance"/>
+            <ObjectAllValuesFrom>
+                <ObjectProperty IRI="#hasCultivar"/>
+                <Class IRI="#Tigoni"/>
+            </ObjectAllValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Asante"/>
+        <Class IRI="#Cultivar"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Chaguo"/>
+        <Class IRI="#Cultivar"/>
+    </SubClassOf>
     <SubClassOf>
         <Class IRI="#Diseased"/>
         <Class IRI="#BlightPeriod"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Faulu"/>
+        <Class IRI="#Cultivar"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Good"/>
+        <Class IRI="#Resistance"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Healthy"/>
         <Class IRI="#BlightPeriod"/>
     </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Karibu"/>
+        <Class IRI="#Cultivar"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mavuno"/>
+        <Class IRI="#Cultivar"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Poor"/>
+        <Class IRI="#Resistance"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sifa"/>
+        <Class IRI="#Cultivar"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tigoni"/>
+        <Class IRI="#Cultivar"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Asante"/>
+        <Class IRI="#Chaguo"/>
+        <Class IRI="#Faulu"/>
+        <Class IRI="#Karibu"/>
+        <Class IRI="#Mavuno"/>
+        <Class IRI="#Sifa"/>
+        <Class IRI="#Tigoni"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#BlightPeriod"/>
+        <Class IRI="#Cultivar"/>
+        <Class IRI="#Resistance"/>
+    </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Diseased"/>
         <Class IRI="#Healthy"/>
     </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Good"/>
+        <Class IRI="#Poor"/>
+    </DisjointClasses>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasCultivar"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#hasResistance"/>
+    </FunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCultivar"/>
+        <Class IRI="#Resistance"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasResistance"/>
+        <Class IRI="#Cultivar"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCultivar"/>
+        <Class IRI="#Cultivar"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasResistance"/>
+        <Class IRI="#Resistance"/>
+    </ObjectPropertyRange>
     <FunctionalDataProperty>
         <DataProperty IRI="#blightPositive"/>
     </FunctionalDataProperty>
